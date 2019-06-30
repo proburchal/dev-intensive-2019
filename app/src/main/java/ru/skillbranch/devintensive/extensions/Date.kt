@@ -54,9 +54,8 @@ private fun normalHumanizeDiff(diffInMs: Long): String {
 }
 
 fun Date.add(value: Long, units: TimeUnits = TimeUnits.SECOND): Date {
-    val result = Date()
-    result.time = this.time + value * units.inMs
-    return result
+    this.time += value * units.inMs
+    return this
 }
 
 fun Date.humanizeDiff(other: Date = Date()): String {
