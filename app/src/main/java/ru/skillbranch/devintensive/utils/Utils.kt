@@ -42,7 +42,7 @@ object Utils {
             'ц' to "c",
             'ч' to "ch",
             'ш' to "sh",
-            'щ' to "sh",
+            'щ' to "sh'",
             'ъ' to "",
             'ы' to "i",
             'ь' to "",
