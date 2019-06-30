@@ -52,16 +52,15 @@ data class User(
     )
 
     companion object Factory {
-        private var lastId = -1
+        private var nextId = 0
         fun makeUser(fullName: String?): User {
-            ++lastId
             val (firstName, lastName) = Utils.parseFullName(fullName)
-            return User(id = "$lastId", firstName = firstName ?: "John", lastName = lastName ?: "Doe")
+            return User(id = "${nextId++}", firstName = firstName ?: "John", lastName = lastName ?: "Doe")
         }
     }
 
     class Builder() {
-        private var id: String = "${++lastId}"
+        private var id: String = "${nextId++}"
         private var firstName: String? = null
         private var lastName: String? = null
         private var avatar: String? = null
