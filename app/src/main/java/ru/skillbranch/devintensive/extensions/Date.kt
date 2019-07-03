@@ -36,7 +36,10 @@ enum class TimeUnits(val accusatives: Triple<String, String, String>, val inMs: 
     DAY(
         accusatives = Triple("день", "дня", "дней"),
         inMs = DAY_ms
-    )
+    );
+    fun plural(value: Long): String {
+        return "$value ${inclineAfterNumeral(value, this.accusatives)}"
+    }
 }
 
 private fun optimalTimeUnit(value: Long): TimeUnits {
