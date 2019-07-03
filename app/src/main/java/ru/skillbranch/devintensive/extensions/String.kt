@@ -1,11 +1,11 @@
 package ru.skillbranch.devintensive.extensions
 
-fun String.truncate(length_: Int = 16): String {
+fun String.truncate(endIndex: Int = 16): String {
     val result = this.trimEnd()
-    return if (length_ >= result.length)
+    return if (endIndex + 1 >= result.length)
         result
     else
-        result.substring(0, length_).trimEnd() + "..."
+        result.substring(0, endIndex + 1).trimEnd() + "..."
 }
 
 fun String.removeDuplicateSpaces(): String =
