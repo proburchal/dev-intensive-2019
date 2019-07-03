@@ -15,11 +15,11 @@ fun String.removeTags(): String =
     Regex("<.*?>").replace(this, "")
 
 fun String.removeHtmlSpecialChars(): String =
-    this.replace("&amp;", "&")
-        .replace("&lt;", "<")
-        .replace("&gt;", ">")
-        .replace("&quot;", "\"")
-        .replace("&apos;", "'")
+    this.replace("&amp;", "")
+        .replace("&lt;", "")
+        .replace("&gt;", "")
+        .replace("&quot;", "")
+        .replace("&apos;", "")
 
 fun String.stripHtml(): String =
     this.removeTags()
