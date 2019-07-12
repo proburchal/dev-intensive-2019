@@ -54,7 +54,7 @@ class Bender(
         val question: String,
         val answers: List<String>
     ) {
-        NAME("Как меня зовут?", listOf("Бендер", "Bender")) {
+        NAME("Как меня зовут?", listOf("бендер", "bender")) {
             override fun nextQuestion(): Question =
                 PROFESSION
 
@@ -124,6 +124,6 @@ class Bender(
         abstract fun isAnswerValid(answer: String): Boolean
         abstract fun invalidAnswer(): String
         fun isAnswerCorrect(answer: String): Boolean =
-            answers.contains(answer)
+            answers.contains(answer.toLowerCase())
     }
 }
