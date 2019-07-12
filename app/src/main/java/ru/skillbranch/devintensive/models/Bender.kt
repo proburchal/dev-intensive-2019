@@ -9,7 +9,7 @@ class Bender(
 
     private fun positiveAnswer(): String {
         question = question.nextQuestion()
-        return "Отлично - ты справился!"
+        return "Отлично - ты справился"
     }
 
     private fun negativeAnswer(): String {
