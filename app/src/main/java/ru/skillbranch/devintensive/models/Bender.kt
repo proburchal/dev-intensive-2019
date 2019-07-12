@@ -15,6 +15,7 @@ class Bender(
     private fun negativeAnswer(): String {
         return if (status == Status.CRITICAL) {
             status = Status.NORMAL
+            question = Question.NAME
             "Это неправильный ответ. Давай все по новой"
         } else {
             status = status.nextStatus()
