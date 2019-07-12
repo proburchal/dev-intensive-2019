@@ -21,12 +21,13 @@ fun Activity.hideKeyboard() {
 }
 
 fun Activity.isKeyboardOpen(): Boolean {
-    val rect: Rect = Rect()
-    val rootView = window.decorView
-    rootView.getWindowVisibleDisplayFrame(rect)
-    val screenHeight = rootView.height
-    val heightDiff = screenHeight - rect.height()
-    return heightDiff > 300
+    val rect = Rect()
+    this.window.decorView.getWindowVisibleDisplayFrame(rect)
+    val frameHeight = rect.height()
+    val screenHeight = this.windowManager.defaultDisplay.height
+
+    val heightDiff = screenHeight - frameHeight
+    return heightDiff > 100
 }
 
 fun Activity.isKeyboardClosed(): Boolean =
